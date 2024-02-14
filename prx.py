@@ -63,7 +63,7 @@ def download_proxies(urls):
 # Function to save proxies to files and remove duplicates
 def save_proxies(proxies):
     for filename, proxy_set in proxies.items():
-        with open(filename, 'w') as file:
+        with open(filename, 'w', encoding='utf-8') as file:  # Specify utf-8 encoding
             file.write('\n'.join(proxy_set))
         print(colored(f"Saved {len(proxy_set)} unique proxies to {filename}", "cyan"))
 
